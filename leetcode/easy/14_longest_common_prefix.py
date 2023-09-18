@@ -23,18 +23,14 @@ class Solution:
                 break
             c += 1
 
-        # if there where only 2 strings in the list, then return the current lcp.
-        if num_of_list_elements == 2:
-            return lcp
-
-        # other wise check the remaining items in the list.
+        #Check the remaining items in the list.
         c = 2
         while c < num_of_list_elements and len(lcp) != 0:
             # if the current element is an empty string then lcp is empty string
             if len(strs[c]) == 0:
                 return ""
             
-            # to avoid index our of bound errors, make sure that you find the short string length between the lcp and current string
+            # to avoid index out of bound errors, make sure that you find the short string length between the lcp and current string
             shortest_string_length = 0
             if len(lcp) < len(strs[c]):
                 shortest_string_length = len(lcp)
